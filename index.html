@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Website Landing Page-with Backround Video Slider  | Travel
+        Codehal</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awsome/5.14.0/css/all/min.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="brand">Travel</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                   <a href="#">Home</a>
+                   <a href="#">About</a>
+                   <a href="#">Explore</a>
+                   <a href="#">Galery</a>
+                   <a href="#">Contact</a>
+                </div>
+            </div>
+        </header>
+
+    <section class="home">
+      <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Wonderful.<br><span>Island</span></h1>
+        <p>An Island or Isle is a piece of subcontiental land completely surrounded by water. Continental Islands and Oceanic Islands is a types of island . Artificial Islands man-made Island.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Camping.<br><span>Enjoy</span></h1>
+        <p>Life is a beautiful journey that is meant to be embraced to the fullest every day. However, that doesn't mean you always wake up ready to seize the day, and sometimes need a reminder that life is a great gift.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Adventures.<br><span>Off Road</span></h1>
+        <p>Nature is our playground, let's explore it off the beaten path.Off-roading is not for the faint of heart, it's for the brave and adventurous.Life is a journey, make your own path.Off-roading is like therapy for the soul.The real beauty of off-roading lies in the undiscovered trails.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Road Trip.<br><span>With Friends</span></h1>
+        <p>Friends make life better so, it only makes sense that traveling with our best buds would enhance our journeys. It's always good to get away and explore new environments or even revisit favorite destinations  and sharing those experiences with a friend makes them even more enjoyable.</p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Feel Nature.<br><span>Relax&Enjoy</span></h1>
+        <p>Nothing compares to nature's beauty. From spring's hopeful new blooms and fall's exquisite array of colors to winter's magic and summer's energy, each season abounds with different types of natural beauty to explore and admire.</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn" active></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div> 
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+        //Javascript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn")
+        const navigation = document.querySelector(".navigation")
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //javascript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+           contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav( i); 
+            });
+        });
+       
+    </script>
+       
+    </body>
+</html>
+            
